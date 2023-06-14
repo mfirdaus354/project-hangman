@@ -30,6 +30,7 @@ class Hangman:
               self.to_look = self.loc_dupli
               return self.duplicate_loc
 
+    #defining Hangman.play() method to outline the inner working of the game
     def play(self, guess):
             if guess in Hangman.LETTERS_TO_USE :
                 if guess in Hangman.WORD_TO_FIND :
@@ -49,12 +50,15 @@ class Hangman:
                 self.turn_count += 1
                 print("Your input is not a (lowercase) letter. Please try again!")
         
+    #defining Hangman.game_over() method to display a string when the player loses the game
     def game_over(self):
             print("game over...")
-            
+
+    #defining Hangman.well_played() method to display a string when the player wins the game        
     def well_played(self):
         print(f'You found the word: {Hangman.WORD_TO_FIND} in {self.turn_count} turns with {self.error_count} errors!')
     
+    #defining Hangman.start_game() method to put previously defined methods together to make a functional program
     def start_game(self):
         print("""
 -------------------------------------------------------------------------------
@@ -81,7 +85,9 @@ class Hangman:
         else:
             self.well_played()
 
-#Let's play Hangman!!
+"""
+Let's play Hangman!!
+"""
 hangman_game = Hangman()
 hangman_game.start_game()
 
