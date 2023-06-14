@@ -72,13 +72,16 @@ class Hangman:
              print("Lives:", self.lives)
              print("Correctly guessed letters:", " | ".join(self.correctly_guessed_letters))
              print("Wrongly guessed letters:", " | ".join(self.wrongly_guessed_letters))
+             print('''
+-------------------------------------------------------------------------------
+             ''')
 
         if self.lives == 0 and len(self.correctly_guessed_letters) != len(Hangman.WORD_TO_FIND):
             self.game_over()
         else:
             self.well_played()
 
-
+#Let's play Hangman!!
 hangman_game = Hangman()
 hangman_game.start_game()
 
