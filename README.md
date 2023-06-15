@@ -8,13 +8,25 @@ This project is a proof of work to demonstrate incorporated skills of programmin
 
 #### INSTALLATION (In Windows):
   In order to run the application, please follow these steps:
-  1. Please make sure that you have GitHub desktop installed in your local machine
-  2. Fork this repository to your GitHub account 
-  2. Open Terminal, access the directory of the forked repository in your local 
+  1. Make sure that the latest version of Python is used as the interpreter. 
+  2. Fork this repository, then clone this reposiory to your local machine. Keep the file path of the cloned repository at hand
+  3. Open Terminal, access the cloned repository by running this following line (ommit the curly brackets) :
+      cd {cloned repository filepath} 
+  4. run this following line in Terminal
+      python main.py
+  
 
 #### USAGE:
-  In order to have an access to the source code, you may fork this repository. I will respond to any pull requests in duly manner.
+  By forking this repository, you are able to suggest some changes or to comment on something you have encountered. To do that, you can make a pull request upon pushed commits of the changes and/or comments
+  
+  Pull requests will be reviewd in duly manner. 
+
+  please send an email to something2046@protonmail.com for further inquires regarding to this project
+
 
 #### TIMELINE
-  I started this project on [14/06/2023 09:00]
+   - [14/06/2023 09:00]
+      project-hangman commenced.
+   - [15/06/2023 12:23]
+      project-hangman-1 is released.
 
