@@ -10,12 +10,7 @@ This project is a proof of work to demonstrate incorporated skills of programmin
 
   In order to run the application, please follow these steps:
   1. Make sure that the latest version of Python is used as the interpreter.
-  2. open the following link using your web browser :
-     
-        https://github.com/mfirdaus354/project-hangman/archive/refs/tags/version-1.zip        
-     
-     This will prompt you to download the project-hangman-1 release
-
+  2. dDownload the zip file of the latest release. The release box is on the right panel.
   3. Extract the zip file. Keep the location of the extracted zip folder at hand.
   4. Open Terminal, access the zip file from step 3 by running this following line ommit the brackets, followed by the name of the folder:
       
