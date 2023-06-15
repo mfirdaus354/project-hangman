@@ -53,7 +53,33 @@ class Hangman:
 
     #defining Hangman.well_played() method to display a string when the player wins the game        
     def well_played(self):
-        print(f'You found the word: {self.word_to_find} in {self.turn_count} turns with {self.error_count} errors!')
+        print(f'''
+Congratulations ! 
+You have found the word: \'{self.word_to_find}\' in {self.turn_count} turns with {self.error_count} errors!''')
+    
+    #defining Hangman.is_continue() to inquire the player what to do next
+    def is_continue(self):
+        while True:
+            inquiry = input("""
+-------------------------------------------------------------------------------
+    Do you wish to continue? 
+    Type [y] if you wish to continue playing
+    Type [n] if you wish to quit playing
+-------------------------------------------------------------------------------
+    """)
+            if inquiry == "y":
+                new_game = Hangman()
+                new_game.start_game()
+                break
+            elif inquiry == "n":
+                print("""
+-------------------------------------------------------------------------------        
+Thank you for playing! Have a nice day! 
+------------------------------------------------------------------------------- 
+        """)
+                break
+            else:
+                print("Invalid input. Please try again.")
     
     #defining Hangman.start_game() method to put previously defined methods together to make a functional program
     def start_game(self):
@@ -78,16 +104,12 @@ class Hangman:
 -------------------------------------------------------------------------------
              ''')
 
-        if self.lives == 0 and len(self.correctly_guessed_letters) != len(self.word_to_find):
+        if self.lives == 0:
             self.game_over()
+
         else:
             self.well_played()
-
-
-"""
-Let's play Hangman!!
-"""
-hangman_game = Hangman()
-hangman_game.start_game()
+        
+        self.is_continue()
 
 
