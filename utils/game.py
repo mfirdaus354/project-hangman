@@ -28,19 +28,12 @@ class Hangman:
         self.word_to_find = random.choice(self.possible_words)
         self.turn_count = 0
         self.error_count = 0
-        
         self.lives = 5
-    
-        
         self.correctly_guessed_letters = ["_" for _ in self.word_to_find] 
         self.wrongly_guessed_letters = []
         self.duplicate_loc = []
         self.to_look = 0
-        """"
-            these attributes are defined in order to: 
-            to enhance user experience
-            to make it easier to draw conclusion of the game, 
-        """
+
         
     
     def find_duplicate_letter(self, letter):
@@ -56,7 +49,7 @@ class Hangman:
             self.turn_count += 1
             print("Your input is not a (lowercase) letter. Please try again!")
         
-        if guess in self.word_to_find or guess in self.wrongly_guessed_letters or guess in self.correctly_guessed_letters: 
+        if guess in self.word_to_find or guess in self.wrongly_guessed_letters or guess in self.correctly_guessed_letters:
             if guess in self.word_to_find:
                 if self.word_to_find.count(guess) != 1:
                         ###### to address situations when guess has multiple occurences in self.word_to_find
@@ -66,7 +59,7 @@ class Hangman:
                 else:
                     ###### to address situations when guess has single occurrence of self.word_to_find
                     self.correctly_guessed_letters[self.word_to_find.index(guess)] = guess
-                    self.turn_count += 1
+                    self.turn_count += 
             elif guess in self.wrongly_guessed_letters or guess in self.correctly_guessed_letters:
                 #### to address situations when user input a previously used letter
                 if guess != "_":
