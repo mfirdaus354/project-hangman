@@ -1,10 +1,10 @@
 """
--------------------------------------------------------------------------------
 project-hangman
 -------------------------------------------------------------------------------
 By: Muhammad Anhar Firdausyi
+-------------------------------------------------------------------------------
 
-Last Update: 
+Last Update: 15/06/2023 22:00
 """
 
 
@@ -13,12 +13,13 @@ Last Update:
 import string as str
 import random 
 
-"""
-Defining class Hangman
-Has a class attribute: Hangman.LETTER_TO_USE
-There are 5 methods enlisted within the class, with the purpose to start the game upon calling the 'star_game' method
-"""
 class Hangman:
+    """
+        Defining class Hangman
+        It has a class attribute: Hangman.LETTER_TO_USE
+        There are 7 methods enlisted within the class
+        The 'star_game' method is called to start the game
+    """
     
     LETTERS_TO_USE = list(str.ascii_lowercase)
         # class attributes
@@ -27,62 +28,82 @@ class Hangman:
         self.word_to_find = random.choice(self.possible_words)
         self.turn_count = 0
         self.error_count = 0
-        self.correctly_guessed_letters = ["_" for _ in self.word_to_find] 
-        self.wrongly_guessed_letters = []
+        
         self.lives = 5
     
-        ## to enhance user experience and to make it easier to draw conclusion of the game, these following attributes are defined
+        
+        self.correctly_guessed_letters = ["_" for _ in self.word_to_find] 
+        self.wrongly_guessed_letters = []
         self.duplicate_loc = []
         self.to_look = 0
+        """"
+            these attributes are defined in order to: 
+            to enhance user experience
+            to make it easier to draw conclusion of the game, 
+        """
         
-        
-    # defining method for find locations of duplicate letters in a self.word_to_find
+    
     def find_duplicate_letter(self, letter):
+        # defining method for find locations of duplicate letters in a self.word_to_find
         self.duplicate_loc = [i for i, l in enumerate(self.word_to_find) if l == letter]
         return self.duplicate_loc
     
-    # defining Hangman.play() method to outline the inner working of the game
     def play(self, guess):
-        if guess in Hangman.LETTERS_TO_USE: 
-            if guess in self.word_to_find:
+        # defining Hangman.play() method to outline the inner working of the game
 
-                #### to address situations when self.word_to_find contains duplicate letters
+        if guess not in Hangman.LETTERS_TO_USE:
+            self.error_count += 1
+            self.turn_count += 1
+            print("Your input is not a (lowercase) letter. Please try again!")
+        
+        if guess in self.word_to_find or guess in self.wrongly_guessed_letters or guess in self.correctly_guessed_letters: 
+            if guess in self.word_to_find:
                 if self.word_to_find.count(guess) != 1:
+                        ###### to address situations when guess has multiple occurences in self.word_to_find
                     for loc in self.find_duplicate_letter(guess):
                         self.correctly_guessed_letters[loc] = guess
                         self.turn_count += 1
                 else:
+                    ###### to address situations when guess has single occurrence of self.word_to_find
                     self.correctly_guessed_letters[self.word_to_find.index(guess)] = guess
                     self.turn_count += 1
-
-            ### to address situations when user input a previously used letter
             elif guess in self.wrongly_guessed_letters or guess in self.correctly_guessed_letters:
+                #### to address situations when user input a previously used letter
                 if guess != "_":
                     self.error_count += 1
                     self.turn_count += 1
                     print("You have used that letter before. Think hard and try again!")
-
             else:
+                ##### if the condition 'guess in self.word_to_find' is not fulfilled
                 self.lives -= 1
                 self.turn_count += 1
                 self.wrongly_guessed_letters.append(guess)
         else:
-            self.error_count += 1
+            """
+            if the condition below is not fulfilled:
+                
+            'if guess in self.word_to_find 
+            or guess in self.wrongly_guessed_letters 
+            or guess in self.correctly_guessed_letters'
+
+            """
+            self.lives -= 1
             self.turn_count += 1
-            print("Your input is not a lowercase letter. Please try again!")
-
-    # defining Hangman.game_over() method to display a string when the player loses the game
+            self.wrongly_guessed_letters.append(guess)
+        
     def game_over(self):
+        # defining Hangman.game_over() method to display a string when the player loses the game
         print("Game over...")
-
-    # defining Hangman.well_played() method to display a string when the player wins the game        
+       
     def well_played(self):
+        # defining Hangman.well_played() method to display a string when the player wins the game 
         print(f'''
 Congratulations ! 
-You have found the word: \'{self.word_to_find}\' in {self.turn_count} turns with {self.error_count} errors!''')
+You have found the word: \'{self.word_to_find}\' 
+You did it in {self.turn_count} turns with {len(self.wrongly_guessed_letters)} mistakes and {self.error_count} errors!''')
     
-    # defining Hangman.is_continue() to inquire the player what to do next
     def is_continue(self):
+        # defining Hangman.is_continue() to inquire the player what to do next
         while True:
             inquiry = input("""
 -------------------------------------------------------------------------------
@@ -107,8 +128,9 @@ Thank you for playing! Have a nice day!
             else:
                 print("Invalid input. Please try again.")
     
-    # defining Hangman.start_game() method to put previously-defined methods together to make a functional program
+    
     def start_game(self):
+        # defining Hangman.start_game() method to put previously-defined methods together to make a functional program
         print("""
 -------------------------------------------------------------------------------
                         LET'S PLAY HANGMAN!
@@ -124,6 +146,7 @@ Thank you for playing! Have a nice day!
             guess = input("Enter a letter: ")
             self.play(guess.lower())
             print("Lives:", self.lives)
+            print("Errors:", self.error_count)
             print("Correctly guessed letters:", " | ".join(self.correctly_guessed_letters))
             print("Wrongly guessed letters:", " | ".join(self.wrongly_guessed_letters))
             print('''
@@ -137,5 +160,3 @@ Thank you for playing! Have a nice day!
             self.well_played()
         
         self.is_continue()
-
-
