@@ -10,7 +10,7 @@ This project is a proof of work to demonstrate incorporated skills of programmin
 
   In order to run the application, please follow these steps:
   1. Make sure that the latest version of Python is used as the interpreter.
-  2. copy the following link into your web browser :
+  2. open the following link using your web browser :
      
         https://github.com/mfirdaus354/project-hangman/archive/refs/tags/version-1.zip        
      
