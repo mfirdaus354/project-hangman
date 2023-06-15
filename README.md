@@ -16,10 +16,10 @@ This project is a proof of work to demonstrate incorporated skills of programmin
      
      This will prompt you to download the project-hangman-1 release
 
-  3. Extract the zip file. Keep the location of the extracted zip file at hand.
-  4. Open Terminal, access the zip file from step 3 by running this following line (ommit the curly brackets):
+  3. Extract the zip file. Keep the location of the extracted zip folder at hand.
+  4. Open Terminal, access the zip file from step 3 by running this following line ommit the brackets, followed by the name of the folder:
       
-      cd {downloaded_zip_filepath} 
+      cd downloaded_zip_folderpath\folder_name
   
   5. run this following line in Terminal:
   
