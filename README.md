@@ -10,9 +10,12 @@ This project is a proof of work to demonstrate incorporated skills of programmin
   In order to run the application, please follow these steps:
   1. Make sure that the latest version of Python is used as the interpreter. 
   2. Fork this repository, then clone this reposiory to your local machine. Keep the file path of the cloned repository at hand
-  3. Open Terminal, access the cloned repository by running this following line (ommit the curly brackets) :
+  3. Open Terminal, access the cloned repository by running this following line (ommit the curly brackets):
+      
       cd {cloned repository filepath} 
-  4. run this following line in Terminal
+  
+  5. run this following line in Terminal:
+  
       python main.py
   
 
