@@ -59,7 +59,7 @@ class Hangman:
                 else:
                     ###### to address situations when guess has single occurrence of self.word_to_find
                     self.correctly_guessed_letters[self.word_to_find.index(guess)] = guess
-                    self.turn_count += 
+                    self.turn_count += 1
             elif guess in self.wrongly_guessed_letters or guess in self.correctly_guessed_letters:
                 #### to address situations when user input a previously used letter
                 if guess != "_":
