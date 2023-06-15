@@ -7,12 +7,17 @@ This repository is created in order to facilitate the enactment of project-hangm
 This project is a proof of work to demonstrate incorporated skills of programming in Python that I have acquired during the AI/DATA OPERATOR Training Program of BeCode. 
 
 #### INSTALLATION (In Windows):
+
   In order to run the application, please follow these steps:
-  1. Make sure that the latest version of Python is used as the interpreter. 
-  2. Fork this repository, then clone this reposiory to your local machine. Keep the file path of the cloned repository at hand
-  3. Open Terminal, access the cloned repository by running this following line (ommit the curly brackets):
+  1. Make sure that the latest version of Python is used as the interpreter.
+  2. copy the following link into your web browser : 
       
-      cd {cloned repository filepath} 
+        https://github.com/mfirdaus354/project-hangman/archive/refs/tags/version-1.zip
+        
+     This will prompt you to download the project-hangman-1 release. Keep the filepath of the downloaded zip file at hand
+  4. Open Terminal, access the zip file from step 3 by running this following line (ommit the curly brackets):
+      
+      cd {downloaded_zip_filepath} 
   
   5. run this following line in Terminal:
   
