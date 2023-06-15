@@ -22,7 +22,7 @@ This project is a proof of work to demonstrate incorporated skills of programmin
 #### USAGE:
   By forking this repository, you are able to suggest some changes or to comment on something you have encountered. To do that, you can make a pull request upon pushed commits of the changes and/or comments
   
-  Pull requests will be reviewd in duly manner. 
+  Pull requests will be reviewed in duly manner. 
 
   please send an email to something2046@protonmail.com for further inquires regarding to this project
 
